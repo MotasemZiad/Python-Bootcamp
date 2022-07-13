@@ -1,0 +1,7 @@
+# Quiz 01:
+
+Syntax Error -> It is like a grammar error in English. In other words, it is an error regarding how we write our code in programming languages.
+
+Linting -> It's a tool for analyzing the code and checking out if there are potential problems or warnings regarding the python style guide or name conventions.
+
+Expression -> It is simply a statement used to perform some actions.

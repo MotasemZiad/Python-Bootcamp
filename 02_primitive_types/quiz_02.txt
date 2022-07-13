@@ -1,0 +1,8 @@
+What are the primitive types in Python?
+int, float, bool, and string
+
+fruit = "Apple"
+print(fruit[1]) // p
+print(fruit[1:-1]) // ppl
+10 % 3 // 1
+print(bool("False")) // True
