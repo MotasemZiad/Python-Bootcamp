@@ -181,29 +181,73 @@
 # webbrowser.open_new("https://www.github.com/motasemziad")
 # webbrowser.open_new_tab("http://motasemziad.github.io/Personal-Website/")
 
-# lis = [4, 5, 6]
-# lis.append(lis)
-# print(lis)  # [4, 5, 6, [...]]
+# Sending Emails:
+# MIME: Multipurpose Internet Mail Extension
+# It is an extension of the original Simple Mail Transport Protocol (SMTP) email protocol.
+# It lets users exchange different kinds of data files,
+# including audio, video, images and application programs, over email.
+# TLS: Transport Layer Security
+# with this protocol all the message that have sent over the internet where encrypted
+
+# from email.mime.multipart import MIMEMultipart
+# from email.mime.text import MIMEText
+# from email.mime.image import MIMEImage
+# from importlib.resources import read_text
+# from pathlib import Path
+# from re import template
+# from string import Template
+# import smtplib
+
+# template = Template(Path("template.html").read_text())
+
+# message = MIMEMultipart()
+# message['from'] = "Motasem Abu Nema"
+# message['to'] = "mnima2000@students.iugaza.edu.ps"
+# message['subject'] = "This is a test email"
+
+# body = template.substitute({
+#     "name": "John Doe",
+# })
+# # body = template.substitute(name="Jane Doe")
+
+# message.attach(MIMEText(body, "html"))
+# message.attach(MIMEImage(Path("github-logo.png").read_bytes()))
+
+# with smtplib.SMTP(host="smtp.gmail.com", port="587") as smtp:
+#     smtp.ehlo()
+#     smtp.starttls()
+#     smtp.login(user="mnima2000@students.iugaza.edu.ps", password="**********")
+#     smtp.send_message(message)
+#     print("Sent...")
 
 
-# a = float("inf")
-# b = float("-inf")
-# print(a, b)   # inf -inf
-# print(100000 < float("inf"))
-# print(-(10000) > float("-inf"))
+# Command-line arguments
 
-# 我 = 4
-# 你 = 5
-# أحمد = 4
-# محمود = 5
-# print(我 + 你)    # 9
-# print(أحمد + محمود)    # 9
+# import sys
 
-# x = 4
-# y = eval("x + 10 * 5 / 10 - 9")
-# print(y)    # 0
+# if len(sys.argv) == 1:
+#     print("USAGE: python3 main.py <password>")
+# else:
+#     password = sys.argv[1]
+#     print("Password", password)
 
-# string = "print('hello world')"
-# eval(string)  # prints hello world
-# string = "1+2+3"
-# print(eval(string))  # returns 6
+# Running External Programs
+
+# import subprocess
+
+# completed = subprocess.run(
+#     ["ls", "-l"], capture_output=True, check=True, text=True)
+# print("args: ", completed.args)
+# print("returncode: ", completed.returncode)
+# print("stdout: ", completed.stdout)
+# print("stderr: ", completed.stderr)
+
+
+# completed = subprocess.run(
+#     ["py", "./other.py"],
+#     capture_output=True,
+#     text=True)
+# print("args: ", completed.args)
+# print("returncode: ", completed.returncode)
+# print("stdout: ", completed.stdout)
+# print("stderr: ", completed.stderr)
