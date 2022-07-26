@@ -75,3 +75,54 @@
 # browser.quit()
 
 # Web Scaping
+# Parsing the HTML behind a web page, get rid of all the html tags, and extract the actual data.
+# import requests
+# from bs4 import BeautifulSoup
+
+# response = requests.get("https://stackoverflow.com/questions")
+# soup = BeautifulSoup(response.text, "html.parser")
+
+# questions = soup.select(
+#     ".s-post-summary--content")
+# # print(type(questions[0]))
+# i = 0
+# for question in questions:
+#     print(f"{i+1}) ", question.select_one(".s-link").get_text())
+#     i += 1
+
+# # print("Description: ", questions[0].select_one(".s-post-summary--content-excerpt").get_text())
+# # print(questions[0].get("class", 0))
+# # print(soup.prettify().encode('cp1252', errors='ignore'))
+
+# Working with PDFs
+import PyPDF2
+
+# rb => read in binary
+
+# with open("./11_popular_python_packages/first.pdf", "rb") as file:
+#     reader = PyPDF2.PdfFileReader(file)
+#     print(reader.numPages)
+#     page = reader.getPage(0)
+#     page.rotate_clockwise(90)
+#     writer = PyPDF2.PdfFileWriter()
+#     writer.add_page(page)
+#     with open("rotated.pdf", "wb") as output:
+#         writer.write(output)
+
+
+# with open("./11_popular_python_packages/third.pdf", "rb") as file:
+#     reader = PyPDF2.PdfFileReader(file)
+#     print(reader.numPages)
+#     page = reader.getPage(4)
+#     page.rotate_clockwise(90)
+#     writer = PyPDF2.PdfFileWriter()
+#     writer.add_blank_page(250, 250)
+#     with open("blanked.pdf", "wb") as output:
+#         writer.write(output)
+
+merger = PyPDF2.PdfFileMerger()
+file_names = ["./11_popular_python_packages/first.pdf",
+              "./11_popular_python_packages/second.pdf"]
+for file_name in file_names:
+    merger.append(file_name)
+merger.write('combined.pdf')
