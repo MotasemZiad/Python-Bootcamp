@@ -95,7 +95,7 @@
 # # print(soup.prettify().encode('cp1252', errors='ignore'))
 
 # Working with PDFs
-import PyPDF2
+# import PyPDF2
 
 # rb => read in binary
 
@@ -120,9 +120,102 @@ import PyPDF2
 #     with open("blanked.pdf", "wb") as output:
 #         writer.write(output)
 
-merger = PyPDF2.PdfFileMerger()
-file_names = ["./11_popular_python_packages/first.pdf",
-              "./11_popular_python_packages/second.pdf"]
-for file_name in file_names:
-    merger.append(file_name)
-merger.write('combined.pdf')
+# merger = PyPDF2.PdfFileMerger()
+# file_names = ["./11_popular_python_packages/first.pdf",
+#               "./11_popular_python_packages/second.pdf"]
+# for file_name in file_names:
+#     merger.append(file_name)
+# merger.write('combined.pdf')
+
+# Working with Excel spreadsheets
+# import openpyxl
+
+# # work_book = openpyxl.Workbook()
+# work_book = openpyxl.load_workbook(
+#     "./11_popular_python_packages/transactions.xlsx")
+
+# print(work_book.sheetnames)
+
+# sheet1 = work_book['Sheet1']
+
+# # work_book.create_sheet("Sheet2", 0)
+# # work_book.remove(sheet1)
+
+# cell = sheet1['a1']
+# print("No. of rows: ", sheet1.max_row)
+# print("No. of columns: ", sheet1.max_column)
+
+# column_1 = sheet1['a']
+# cells = sheet1['a': 'c']
+
+# # print(column_1)
+# # print(cells)
+
+# # for row in range(1, sheet1.max_row + 1):
+# #     for column in range(1, sheet1.max_column + 1):
+# #         cell = sheet1.cell(row, column)
+# #         print(cell.value)
+
+# # cell = sheet1.cell(row='1', column='1')
+# # print(cell.value)
+# # print(cell.row)
+# # print(cell.column)
+# # print(cell.coordinate)
+
+# sheet1.append([1005, 5, 8.3])
+# work_book.save("./11_popular_python_packages/transactions2.xlsx")
+
+# Command Query Separation
+# A software code can be either a COMMAND or a QUERY
+
+# NumPy
+# A comprehensive package can be used in scientific computation (ML, Data Science)
+# It brings super fast multidimensional arrays that take less memory than the built-in lists in python.
+import numpy as np
+
+# array_of_numbers = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+# # (rows, columns)
+# # print(array_of_numbers)
+# # print(type(array_of_numbers))
+# # print("Shape of the array: (rows, column) =>", array_of_numbers.shape)
+
+# array_of_zeros = np.zeros((2, 3), dtype=int)
+# array_of_ones = np.ones((3, 4), dtype=int)
+# array_of_full = np.full((5, 3), fill_value=6, dtype=int)
+# array_of_random = np.random.random((12, 6))
+
+# print(array_of_zeros)
+# print(array_of_ones)
+# print(array_of_full)
+# print(array_of_random)
+# print(array_of_random[0, 0])
+# print(array_of_random > 0.2)
+# print(array_of_random[array_of_random > 0.5])
+
+# print("Sum: ", np.sum(array_of_random))
+# print("Floor: ", np.floor(array_of_random))
+# print("Ceil: ", np.ceil(array_of_random))
+# print("Round: ", np.round(array_of_random))
+
+# first = [1, 2, 3]
+# second = [1, 2, 3]
+
+# print(first + second)
+
+# first = np.array([1, 2, 3])
+# second = np.array([1, 2, 3])
+
+# print(first + 5)
+
+# print(first + second)
+# print(first - second)
+# print(first * second)
+# print(first / second)
+# print(first // second)
+# print(first % second)
+# print(first ** second)
+
+dimensions_inch = np.array([1, 2, 3])
+dimensions_cm = dimensions_inch * 2.54
+
+print(dimensions_cm)
