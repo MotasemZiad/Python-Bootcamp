@@ -129,10 +129,37 @@
 # my_dict.setdefault("count", 0)
 # print(my_dict)
 
-from collections import Counter
+# from collections import Counter
 
-my_list = [10, 10, 10, 9, 9, 5, 5, 9, 9, 10, 10, 11, 12, 11, 11, 5]
+# my_list = [10, 10, 10, 9, 9, 5, 5, 9, 9, 10, 10, 11, 12, 11, 11, 5]
 
-counter = Counter(my_list)
-print(counter.most_common(2))
-print(counter)
+# counter = Counter(my_list)
+# print(counter.most_common(2))
+# print(counter)
+
+# Dataclasses in Python
+# import string
+# import random
+# from dataclasses import dataclass, field
+
+
+# def generate_id() -> str:
+#     return "".join(random.choices(string.ascii_letters + string.digits, k=12))
+
+
+# @dataclass(frozen=True, kw_only=True, slots=True)
+# class Person():
+#     id: str = field(init=False, default_factory=generate_id)
+#     name: str
+#     address: str
+#     active: bool = True
+#     email_addresses: list[str] = field(default_factory=list)
+
+
+# def main():
+#     person = Person(name="John Doe", address="132 Main St.")
+#     print(person)
+
+
+# if __name__ == "__main__":
+#     main()
