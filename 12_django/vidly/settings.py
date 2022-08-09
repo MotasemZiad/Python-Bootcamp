@@ -26,7 +26,7 @@ SECRET_KEY = '(8f2w!+#il-zs(nf**%^vvyju7iw&22bx_(r)d+x8p+g(2xj27'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://frozen-coast-25574.herokuapp.com/'
+    '*'
 ]
 
 
