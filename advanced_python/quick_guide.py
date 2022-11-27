@@ -7,11 +7,7 @@
     as documentation.
 """
 
-####################################################
-# 1. Primitive Datatypes and Operators
-####################################################
 
-# You have numbers
 from functools import wraps
 import json
 from bat import Bat
@@ -21,6 +17,13 @@ import math as m
 from math import *
 from math import ceil, floor
 import math
+
+
+####################################################
+# 1. Primitive Datatypes and Operators
+####################################################
+
+# You have numbers
 3  # => 3
 
 # Math is what you would expect
