@@ -1,24 +1,22 @@
-from typing import Callable
+class Book:
+    def __init__(self, author: str, title: str, pages: int) -> None:
+        self.author = author
+        self.title = title
+        self.pages = pages
 
-IntFunction = Callable[[int], int]
-
-
-def multiply_by_two(x: float) -> float:
-    return x * 2.0
-
-
-def add_three(x: int) -> int:
-    return x + 3
-
-
-def compute_stats(users, plans, products):
-    # some complicated code..
-    pass
+    def __len__(self) -> int:
+        return self.pages
 
 
 def main():
-    my_var: IntFunction = multiply_by_two
-    print(my_var(5))
+    my_str = "hello"
+    print(len(my_str))
+    my_list = [23, 53, 92, 12]
+    print(len(my_list))
+    my_dict = {'one': 123, 'two': 456, 'three': 789}
+    print(len(my_dict))
+    my_book = Book(author="Robert C. Martin", title="Clean Code", pages=464)
+    print(len(my_book))
 
 
 if __name__ == '__main__':
