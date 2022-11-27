@@ -27,15 +27,15 @@ class Book:
 
 
 def main():
-    my_str="hello"
-    print(len(my_str))
-    my_list=[34, 45, 56, 67]
-    print(len(my_list))
-    my_dict={"one": 1, "two": 2, "three": 3}
-    print(len(my_dict))
-    my_book=Book("Robert Martin", "Clean Code", 464)
-    print(len(my_book))
-    
+    # my_str="hello"
+    # print(len(my_str))
+    # my_list=[34, 45, 56, 67]
+    # print(len(my_list))
+    # my_dict={"one": 1, "two": 2, "three": 3}
+    # print(len(my_dict))
+    # my_book=Book("Robert Martin", "Clean Code", 464)
+    # print(len(my_book))
+
     # my_var: IntFunction = multiply_by_two
     # my_var = 5
     # my_var = True
@@ -49,6 +49,7 @@ def main():
 
     # print(my_var(5))
     # print(type(my_var))
+    print("Hello World!")
 
 
 if __name__ == "__main__":
