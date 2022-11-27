@@ -1,3 +1,12 @@
+# Types & Type hints
+
+""" Tradeoffs when you are dealing with types & type hints:
+    1. Complex types may lead to cryptic error messages.
+    2. Types may restrict functionality.
+    3. Types are not yet that common in Python packages.
+"""
+
+
 class Book:
     def __init__(self, author: str, title: str, pages: int) -> None:
         self.author = author
