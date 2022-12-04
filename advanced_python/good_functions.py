@@ -6,7 +6,12 @@
     5. Don't create and use an object in the same place.
     6. Don't use flag arguments.
     7. Remember that functions are object.
-    Bonus: Follow the naming convention and the style guide of your language. 
+    Bonus: Follow the naming convention and the style guide of your language.
+    a. If a function has and like create_user_and_store _in_db check if it does one thing.
+    b. Always try to shorten the name of the function (ex: publish_info_to_library(lib) should be publish_info_to(library))
+    c. Function names should be Actions (Verbs), but arguments should be Nouns (ex: greeting(say_hi_to: str) should be greet(name: str))
+    d. Make sure you use the same vocabulary everywhere (ex: get() or fetch(), post() or store())
+    e. Use the full name instead of the first character (n -> number, l -> library, n -> name)   
 """
 
 from dataclasses import dataclass
