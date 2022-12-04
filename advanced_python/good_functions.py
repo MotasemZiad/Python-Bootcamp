@@ -38,12 +38,10 @@ def luhn_checksum(card_number: str) -> bool:
 
 
 def validate_card(customer: Customer) -> bool:
-    customer.cc_valid = (
-        luhn_checksum(customer.cc_number) and datetime(
-            customer.cc_exp_year, customer.cc_exp_month, 1) > datetime.now()
+    return (
+        luhn_checksum(customer.cc_number)
+        and datetime(customer.cc_exp_year, customer.cc_exp_month, 1) > datetime.now()
     )
-
-    return customer.cc_valid
 
 
 def main() -> None:
@@ -54,8 +52,8 @@ def main() -> None:
         cc_exp_month=1,
         cc_exp_year=2025,
     )
-    is_valid = validate_card(ahmed)
-    print(f"Is Ahmed's card valid? {is_valid}")
+    ahmed.cc_valid = validate_card(ahmed)
+    print(f"Is Ahmed's card valid? {ahmed.cc_valid}")
     print(ahmed)
 
 
