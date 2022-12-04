@@ -13,6 +13,38 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Protocol
 
+import logging
+
+
+class PaymentHandler(Protocol):
+    def handle_payment(self, amount: int) -> None:
+        ...
+
+
+class StripePaymentHandler:
+    def handle_payment(self, amount: int) -> None:
+        logging.info(f"Charging ${amount/100:.2f} using Stripe")
+
+
+class PayPalPaymentHandler:
+    def handle_payment(self, amount: int) -> None:
+        logging.info(f"Charging ${amount/100:.2f} using PayPal")
+
+
+PRICES = {
+    "burger": 15_00,
+    "fries": 5_00,
+    "drink": 2_00,
+    "salad": 3_00,
+}
+
+
+def order_food(items: list[str], payment_handler: PaymentHandler) -> None:
+    total = sum(PRICES[item] for item in items)
+    logging.info(f"Order total is ${total/100:.2f}.")
+    payment_handler.handle_payment(total)
+    logging.info("Order completed.")
+
 
 @dataclass
 class Card:
@@ -65,20 +97,23 @@ def validate_card(card: CardInfo) -> bool:
 
 
 def main() -> None:
-    card = Card(
-        number="8976325968451298",
-        exp_month=1,
-        exp_year=2025,
-    )
-    ahmed = Customer(
-        name="Ahmed Ali",
-        phone="+00970598926087",
-        card=card
-    )
+    # card = Card(
+    #     number="8976325968451298",
+    #     exp_month=1,
+    #     exp_year=2025,
+    # )
+    # ahmed = Customer(
+    #     name="Ahmed Ali",
+    #     phone="+00970598926087",
+    #     card=card
+    # )
 
-    ahmed.cc_valid = validate_card(card)
-    print(f"Is Ahmed's card valid? {ahmed.cc_valid}")
-    print(ahmed)
+    # ahmed.cc_valid = validate_card(card)
+    # print(f"Is Ahmed's card valid? {ahmed.cc_valid}")
+    # print(ahmed)
+    payment_handler = StripePaymentHandler()
+    logging.basicConfig(level=logging.INFO)
+    order_food(["burger", "fries", "drink"], payment_handler)
 
 
 if __name__ == "__main__":
